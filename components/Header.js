@@ -3,7 +3,12 @@ import { View, Text } from 'react-native'
 
 const Header = () => {
     return (
-        <View>
+        <View style={{
+            height: 40,
+            marginTop: 20,
+            paddingHorizontal:20,
+            justifyContent: 'center'
+          }}>
             <Text>Stack Engine</Text>
         </View>
     )
