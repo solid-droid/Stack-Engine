@@ -30,7 +30,7 @@ const Home = ({isDev}) => {
     return (
     <>
     {isDev && <Developer showSettings={showSettings} currentTab = {currentTab}></Developer>}
-    {isSettings ? <Settings/>: 
+    {isSettings ? <Settings showSettings={showSettings}/>: 
         <Tab.Navigator  tabBarOptions={{style: { height: 55, backgroundColor:'#f1f3f4'}}}>
             <Tab.Screen options={{title:(props)=><MaterialIcons name="dashboard" size={35} color="black" />}} name='dashboard' component={dashboardTab} />
             <Tab.Screen options={{title:(props)=><Entypo name="chat" size={35} color="black" />}} name="Mess" component={messengerTab} />

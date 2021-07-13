@@ -1,7 +1,23 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, BackHandler } from 'react-native'
 
-const Settings = () => {
+const Settings = ({showSettings}) => {
+
+    React.useEffect(() => {
+        const backAction = () => {
+            showSettings(false);
+          return true;
+        };
+    
+        const backHandler = BackHandler.addEventListener(
+          "hardwareBackPress",
+          backAction
+        );
+    
+        return () => backHandler.remove();
+      }, []);
+
+
     return (
         <View>
             <Text>Test SETTINGS</Text>
