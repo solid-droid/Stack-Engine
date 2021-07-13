@@ -2,8 +2,7 @@ import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import { FontAwesome, MaterialCommunityIcons  } from '@expo/vector-icons';
 
-let homeScreen = true;
-const Header = ({navigation}) => {
+const Header = ({isDev, showDev}) => {
    return (
         <View style={{
             height: 35,
@@ -22,12 +21,12 @@ const Header = ({navigation}) => {
                 <Text style={{marginRight:0, marginLeft:5}}>ESP-32 Generic</Text>
                 <TouchableOpacity>
                     <MaterialCommunityIcons style={{marginRight:-5}} name='dots-vertical' size={27} color="black" onPress={() => {
-                        if(homeScreen){
-                            homeScreen=false;
-                            navigation.navigate('settings') 
+                        if(isDev){
+                            showDev(false);
+    
                         } else {
-                            homeScreen=true;
-                            navigation.navigate('home') 
+                            showDev(true);
+   
                         }
                         
                         }} />
