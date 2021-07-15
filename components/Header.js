@@ -5,8 +5,8 @@ import { FontAwesome, MaterialCommunityIcons  } from '@expo/vector-icons';
 const Header = ({isDev, showDev}) => {
    return (
         <View style={{
-            height: 35,
-            marginTop: 20,
+            height: 65,
+            paddingTop: 20,
             marginLeft:5,
             marginRight:10,
             alignItems: 'center',
@@ -19,8 +19,7 @@ const Header = ({isDev, showDev}) => {
             <View style={{flexDirection:'row', alignItems: 'center',}}>
                 <FontAwesome name="circle" size={10} color="black" />
                 <Text style={{marginRight:0, marginLeft:5}}>ESP-32 Generic</Text>
-                <TouchableOpacity>
-                    <MaterialCommunityIcons style={{marginRight:-5}} name='dots-vertical' size={27} color="black" onPress={() => {
+                <TouchableOpacity onPress={() => {
                         if(isDev){
                             showDev(false);
     
@@ -29,7 +28,8 @@ const Header = ({isDev, showDev}) => {
    
                         }
                         
-                        }} />
+                        }} >
+                    <MaterialCommunityIcons style={{marginRight:-5}} name='dots-vertical' size={27} color="black" />
                 </TouchableOpacity>
             </View>
         </View>

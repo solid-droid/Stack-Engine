@@ -9,7 +9,7 @@ import Header from './components/Header';
 const Stack = createStackNavigator();
 export default function App() {
 
-  const [isDev, showDev] = React.useState(true);
+  const [isDev, showDev] = React.useState(false);
 
   const homePage = ()=> <Home isDev = {isDev} />
   const header = () => <Header isDev = {isDev} showDev = {showDev} />

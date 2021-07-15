@@ -2,11 +2,11 @@ import React, { useEffect, useState, useRef } from 'react'
 import { StyleSheet, Text, View, TouchableOpacity,ScrollView } from 'react-native'
 import { FontAwesome5,MaterialIcons } from '@expo/vector-icons';
 
-const Developer = ({currentTab, showSettings}) => {
+const Developer = ({currentTab, showSettings, showDevices}) => {
 
 
     const scrollView = useRef(null)
-    const [data, setData] = useState('Welcome to Developer Mode');
+    const [data, setData] = useState('> Welcome to Developer Mode');
 
     useEffect(()=>{
     
@@ -24,11 +24,11 @@ const Developer = ({currentTab, showSettings}) => {
                 </ScrollView>
             </View>
             <View style={styles.buttons}>
-                <TouchableOpacity>
-                    <FontAwesome5 name="microchip" size={40} color="black" />
+                <TouchableOpacity onPress={()=>{showDevices(set=>!set);showSettings(false);}}>
+                    <FontAwesome5 name="microchip" size={40} color="black"  />
                 </TouchableOpacity>
-                <TouchableOpacity>
-                    <MaterialIcons name="settings" size={40} color="black" onPress={()=>showSettings(set=>!set)} />
+                <TouchableOpacity  onPress={()=>{showSettings(set=>!set);showDevices(false);}}>
+                    <MaterialIcons name="settings" size={40} color="black" />
                 </TouchableOpacity>
             </View>
         </View>
