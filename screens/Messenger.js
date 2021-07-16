@@ -1,6 +1,7 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View, Dimensions } from 'react-native'
 import { useIsFocused } from "@react-navigation/native"; 
+import { WebView } from 'react-native-webview';
 
 export default function Messenger({setCurrentTab}) {
     const isFocused = useIsFocused();
@@ -11,9 +12,12 @@ export default function Messenger({setCurrentTab}) {
     },0);
     }
     return (
-        <View>
-        </View>
+    <WebView 
+      style={styles.container}
+      source={{ uri: 'https://solid-droid.github.io/StackEngine-messenger/' }}
+    />
     )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+})
